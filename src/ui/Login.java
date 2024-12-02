@@ -169,7 +169,7 @@ public class Login extends JFrame {
 	}
 
 	protected void imgSalir_mouseClicked() {
-		if ( JOptionPane.showConfirmDialog(this, "�Desea salir?", "Salir", JOptionPane.YES_NO_OPTION ) == JOptionPane.YES_OPTION ) 
+		if ( JOptionPane.showConfirmDialog(this, "¿Desea salir?", "Salir", JOptionPane.YES_NO_OPTION ) == JOptionPane.YES_OPTION ) 
 			System.exit(0);
 	}
 

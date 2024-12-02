@@ -1,7 +1,6 @@
 package ui;
 
 import java.awt.Color;
-import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -9,7 +8,6 @@ import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -120,10 +118,6 @@ public class Planillas extends JFrame implements Runnable {
 		imgMenu.setBounds(0, 60, 250, 55);
 		imgMenu.setVisible( false );
 		getContentPane().add( imgMenu );
-		
-		imgMenu.setBounds(0, 60, 250, 55);
-		imgMenu.setVisible( false );
-		getContentPane().add( imgMenu );
 
 		lblMensaje = new JLabel();
 		lblMensaje.setBounds(20, 60, 1024, 39);
@@ -158,7 +152,6 @@ public class Planillas extends JFrame implements Runnable {
 
 		pnlSubMenu = new JPanel();
 		pnlSubMenu.setBackground( Color.BLACK );
-		pnlSubMenu.setBounds(20,0,230, 0);
 		pnlSubMenu.setLayout( null );
 		pnlSubMenu.setVisible( false );
 		pnlMenu.add( pnlSubMenu );
@@ -271,16 +264,16 @@ public class Planillas extends JFrame implements Runnable {
 			@Override public void mouseClicked(MouseEvent e) { imgSalir_mouseClicked(); } });
 		
 		btnTrabajadores.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { btn_MouseEntered( btnTrabajadores ); }
-			@Override public void mouseExited(MouseEvent e) { btn_MouseExited( btnTrabajadores ); } });
+			@Override public void mouseEntered(MouseEvent e) { btn_mouseEntered( btnTrabajadores ); }
+			@Override public void mouseExited(MouseEvent e) { btn_mouseExited( btnTrabajadores ); } });
 
 		btnPlanillas.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { btn_MouseEntered( btnPlanillas ); }
-			@Override public void mouseExited(MouseEvent e) { btn_MouseExited( btnPlanillas ); } });
+			@Override public void mouseEntered(MouseEvent e) { btn_mouseEntered( btnPlanillas ); }
+			@Override public void mouseExited(MouseEvent e) { btn_mouseExited( btnPlanillas ); } });
 		
 		btnInformes.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { btn_MouseEntered( btnInformes ); }
-			@Override public void mouseExited(MouseEvent e) { btn_MouseExited( btnInformes ); } });
+			@Override public void mouseEntered(MouseEvent e) { btn_mouseEntered( btnInformes ); }
+			@Override public void mouseExited(MouseEvent e) { btn_mouseExited( btnInformes ); } });
 		
 		btnTrabajadores.addActionListener( e -> btn_actionPerformed( btnTrabajadores, 0 ) );
 		btnPlanillas.addActionListener( e -> btn_actionPerformed( btnPlanillas, 1 ) );
@@ -305,68 +298,59 @@ public class Planillas extends JFrame implements Runnable {
 			@Override public void mouseClicked(MouseEvent e) { lblIcon_mouseClicked(5); } });
 
 		lblSubMenu01.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu01 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu01 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(1); } } );
-		
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu01 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu01 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(1); } });
 		lblSubMenu02.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu02 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu02 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(2); } } );
-		
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu02 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu02 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(2); } });
 		lblSubMenu03.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu03 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu03 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(3); } } );
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu03 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu03 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(3); } });
 		lblSubMenu04.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu04 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu04 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(4); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu04 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu04 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(4); } });
 		lblSubMenu05.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu05 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu05 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(5); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu05 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu05 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(5); } });
 		lblSubMenu06.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu06 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu06 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(6); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu06 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu06 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(6); } });
 		lblSubMenu07.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu07 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu07 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(7); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu07 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu07 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(7); } });
 		lblSubMenu08.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu08 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu08 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(8); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu08 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu08 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(8); } });
 		lblSubMenu09.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu09 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu09 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(9); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu09 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu09 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(9); } });
 		lblSubMenu10.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu10 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu10 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(10); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu10 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu10 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(10); } });
 		lblSubMenu11.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu11 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu11 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(11); } } );
-
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu11 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu11 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(11); } });
 		lblSubMenu12.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu12 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu12 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(12); } } );
-		
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu12 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu12 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(12); } });
+
 		lblSubMenu13.addMouseListener(new MouseAdapter() {
-			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_MouseEntered( lblSubMenu13 ); }
-			@Override public void mouseExited(MouseEvent e) { lblSubMenu_MouseExited( lblSubMenu13 ); } } );
-			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(13); } } );
+			@Override public void mouseEntered(MouseEvent e) { lblSubMenu_mouseEntered( lblSubMenu13 ); }
+			@Override public void mouseExited(MouseEvent e) { lblSubMenu_mouseExited( lblSubMenu13 ); }
+			@Override public void mouseClicked(MouseEvent e) { lblSubMenu_mouseClicked(13); } });
+	
 	}
 
 	protected void frame_windowOpened() {
@@ -392,12 +376,12 @@ public class Planillas extends JFrame implements Runnable {
 			System.exit(0);
 	}
 	
-	protected void btn_MouseEntered(JButton btn) {
+	protected void btn_mouseEntered(JButton btn) {
 		if ( menu > -1 ) return;
 		btn.setBackground( new Color( 124, 17, 120 ) );
 	}
 
-	protected void btn_MouseExited(JButton btn) {
+	protected void btn_mouseExited(JButton btn) {
 		if ( menu > -1 ) return;
 		btn.setBackground( new Color(94, 17, 90) );
 	}
@@ -431,32 +415,33 @@ public class Planillas extends JFrame implements Runnable {
 			aLblMenu[i].setVisible(true);
 
 			aLblIcon[i].setBounds(225, fila + 5, 16, 16);
-			aLblIcon[i].setIcon( new ImageIcon( Login.class.getResource("/ui/img/" + (i == index ?  "arriba" : "abajo") + ".png") ) );
+			aLblIcon[i].setIcon( new ImageIcon( Login.class.getResource("/ui/img/"+  ( i == index ? "arriba" : "abajo") + ".png") ) );
 			aLblIcon[i].setVisible(true);
 
-			if (i == index) {
-				pnlSubMenu.setBounds(20, fila + 20, 230, aSubMenu[ menu ][index].length * 30);
+			if ( i == index ) { 
+				pnlSubMenu.setBounds( 20, fila + 20, 230, aSubMenu[menu][index].length * 30 );
 				pnlSubMenu.setVisible(true);
-				fila += aSubMenu[ menu ][index].length * 30;
+				fila += aSubMenu[menu][index].length * 30;
 			}
 		}
 
 		for(int i=0, fila=10; i < aSubMenu[menu][index].length; i++, fila += 30 ) {
-			aLblSubMenu[i].setBounds(10,fila, 230, 25);
-			aLblSubMenu[i].setText(aSubMenu[menu][index][i]);
-			aLblSubMenu[i].setVisible(true);	
+			aLblSubMenu[i].setBounds(10, fila, 200, 30);
+			aLblSubMenu[i].setText( aSubMenu[menu][index][i] );
+			aLblSubMenu[i].setVisible(true);
 		}
+	}
 
-		protected void lblSubMenu_MouseEntered(JLabel lbl) {
-			lbl.setForeground( new Color( 13, 138, 196 ) );
-		}
-	
-		protected void lblSubMenu_MouseExited(JLabel lbl) {
-			lbl.setForeground( Color.WHITE );
-		}
+	protected void lblSubMenu_mouseEntered(JLabel lbl) {
+		lbl.setForeground( new Color( 13, 138, 196 ) );
+	}
 
-		protected void lblSubMenu_mouseClicked(int index) {
-		}
+	protected void lblSubMenu_mouseExited(JLabel lbl) {
+		lbl.setForeground( Color.WHITE );
+	}
+
+	protected void lblSubMenu_mouseClicked(int index) {
+
 	}
 
 	@Override
