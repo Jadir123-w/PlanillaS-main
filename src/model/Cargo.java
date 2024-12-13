@@ -17,6 +17,8 @@ public class Cargo {
         Detalle = detalle;
     }
 
+    public Cargo() { }
+
     public Cargo(int id, String detalle) {
         this.id = id;
         Detalle = detalle;

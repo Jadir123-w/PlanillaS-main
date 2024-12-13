@@ -23,6 +23,8 @@ public class Departamento {
         Cuenta = cuenta;
     }
 
+    public Departamento() { }
+
     public Departamento(int id, String razonSocial, String cuenta) {
         this.id = id;
         RazonSocial = razonSocial;
