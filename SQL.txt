@@ -1,0 +1,64 @@
+drop database if exists planillas;
+create database planillas;
+use planillas;
+
+create table Cargo (
+	id int primary key auto_increment,
+	Detalle char(30) unique,
+);
+
+create table CentroCosto (
+	id int primary key auto_increment,
+	Detalle char(30) unique,
+);
+
+create table Departamento (
+	id int primary key auto_increment,
+	RazonSocial char(30) unique,
+	Cuenta char(10),
+);
+
+
+create table Empresa (
+	id int primary key auto_increment,
+	Ruc char(11) unique,
+	RazonSocial char(30) unique,
+	NombreComercial char (30) not null,
+	Direccion char(50) not null,
+	RepresentanteLegal char (50) not null,
+	DniRepresentaLegal char (8) not null,
+	RegistroPatronal char(28),
+	RegimenLaboral char(7) check (RegimenLaboral in ('Privado','Publico')),
+);
+
+create table Sede (
+	id int primary key auto_increment,
+	NombreSede char(30) not null,
+	Direccion char(50) not null,
+	idProvincia not null,
+	idDistrito not null,
+	idDepartamento not null,
+	Estado char(1) not null,
+);
+
+
+create table Empleado (
+	id int primary key auto_increment,
+	Dni char(8) unique;
+	Nombres char(30) not null,
+	ApellidoPaterno char(30) not null,
+	ApellidoMaterno char(30) not null,
+	Direccion char (50) not null,
+	idDistrito int not null,
+	idProvincia int not null,
+	idDepartamento int not null,
+	Genero char(1) int not null (Genero in ('M', 'F')),
+	EstadCivil char(1) check (EstadoCivil in ('S','C','D','V')),
+	
+	idCargo int references Cargo(id),
+);
+
+--insert
+insert Cargo(Detalle) values( 'Administrador'),('Cajero'),('Vendedor'),('Contador');
+insert CentroCosto(Detalle) values( 'Produccion'),('Ventas');
+insert Departamento(Detalle) values( 'Almacen'),('Ventas');
