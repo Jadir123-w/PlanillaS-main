@@ -69,3 +69,24 @@ select nombre from fabricante order by fabricante.id ASC;
 select nombre from fabricante order by fabricante.id desc;
 -- 15. Lista los nombres de los productos ordenados en primer lugar por el nombre de forma ascendente y en segundo lugar por el precio de forma descendente.
 select nombre, precio from producto order by nombre ASC,precio DESC;
+
+
+-- 1.1.6
+-- 1. Calcula el número total de productos que hay en la tabla productos.
+select count(*) from producto;
+-- 2. Calcula el número total de fabricantes que hay en la tabla fabricante.
+select count(*) from fabricante;
+-- 3. Calcula el número de valores distintos de identificador de fabricante aparecen en la tabla productos.
+select count(DISTINCT id_fabricante) FROM producto;
+-- 4. Calcula la media del precio de todos los productos.
+select round(avg(precio),2) from producto;
+-- 5. Calcula el precio más barato de todos los productos
+select min(precio) from producto;
+-- 6. Calcula el precio más caro de todos los productos
+select max(precio) from producto;
+-- 7. Lista el nombre y el precio del producto más barato
+select * from producto order by precio asc;
+-- 8. Lista el nombre y el precio del producto más caro.
+select * from producto order by precio desc;
+-- 9. Calcula la suma de los precios de todos los productos.
+select sum(precio) from producto;
